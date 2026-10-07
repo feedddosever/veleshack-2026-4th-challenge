@@ -48,9 +48,10 @@ LOG = logging.getLogger("agent")
 
 ARENA_URL = os.environ.get("ARENA_URL", "http://localhost:8080")
 TEAM_NAME = os.environ.get("TEAM_NAME", "unnamed-team")
-# Fetch last round's result before bidding only if this much of the window is left;
-# otherwise bid first and fetch afterwards. A faulted fetch can cost ~1 s of backoff.
-PREFETCH_MIN_SECONDS = float(os.environ.get("PREFETCH_MIN_SECONDS", "2.5"))
+# How long the bid may wait for last round's result (ours). The fetch runs on its
+# own thread, so a faulted fetch (the client backs off ~1 s on a 503) never holds
+# the bid back for longer than this.
+PREFETCH_WAIT_SECONDS = float(os.environ.get("PREFETCH_WAIT_SECONDS", "0.3"))
 
 _stop = threading.Event()
 
@@ -163,9 +164,9 @@ def run() -> int:
 
         # ----------------------------------------- last round's result (ours)
         # It settled the moment this round opened. Reading it first gives the
-        # strategy an up-to-date history, but only if the window can spare it.
-        if float(rnd.get("seconds_remaining", 0.0)) > PREFETCH_MIN_SECONDS:
-            _collect_results(client, history, to_collect, round_index, False)
+        # strategy an up-to-date history - if it arrives in time. If not, the
+        # strategy bids on the history it has and the result is read afterwards.
+        _prefetch_result(client, history, to_collect, round_index)
 
         # ------------------------------------------------------------- decide
         budget = float(rnd.get("budget", 0.0))
@@ -239,6 +240,27 @@ def run() -> int:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+def _prefetch_result(client: ArenaClient, history: List[Dict[str, Any]],
+                     to_collect: List[int], open_round: int) -> None:
+    """Fetch the latest settled result, waiting at most PREFETCH_WAIT_SECONDS (ours)."""
+    settled = [r for r in to_collect if r < open_round]
+    if not settled:
+        return
+    box: List[Dict[str, Any]] = []
+
+    def fetch() -> None:
+        try:
+            box.append(client.get_result(settled[-1], attempts=1))
+        except ArenaClientError:
+            pass
+
+    worker = threading.Thread(target=fetch, daemon=True)
+    worker.start()
+    worker.join(PREFETCH_WAIT_SECONDS)
+    if box:  # read in time; otherwise _collect_results picks it up after the bid
+        _record(history, to_collect, box[0])
+
+
 def _collect_results(client: ArenaClient, history: List[Dict[str, Any]],
                      to_collect: List[int], open_round: int, run_over: Any) -> None:
     """Pull our settled results into `history` (ours). Best-effort, one attempt each.
@@ -252,21 +274,28 @@ def _collect_results(client: ArenaClient, history: List[Dict[str, Any]],
             continue
         except ArenaClientError:
             return  # faulted; try again on the next poll
+        _record(history, to_collect, result)
+
+
+def _record(history: List[Dict[str, Any]], to_collect: List[int], result: Dict[str, Any]) -> None:
+    """Move one settled result from `to_collect` into `history` (ours)."""
+    round_no = int(result.get("round", 0))
+    if round_no in to_collect:
         to_collect.remove(round_no)
-        if not result.get("participated"):
-            continue
-        history.append(result)
-        history.sort(key=lambda h: int(h.get("round", 0)))
-        LOG.info(
-            "round %d  spend=%.3f  alloc=%s  utility=%.4f%s  battery=%.2f  total=%.3f",
-            result["round"],
-            result.get("spend", 0.0),
-            _fmt_bundle(result.get("allocation", {})),
-            result.get("utility", 0.0),
-            _fmt_violations(result.get("floor_violations")),
-            result.get("battery", 0.0),
-            result.get("cumulative_score", 0.0),
-        )
+    if not result.get("participated") or any(int(h["round"]) == round_no for h in history):
+        return
+    history.append(result)
+    history.sort(key=lambda h: int(h.get("round", 0)))
+    LOG.info(
+        "round %d  spend=%.3f  alloc=%s  utility=%.4f%s  battery=%.2f  total=%.3f",
+        result["round"],
+        result.get("spend", 0.0),
+        _fmt_bundle(result.get("allocation", {})),
+        result.get("utility", 0.0),
+        _fmt_violations(result.get("floor_violations")),
+        result.get("battery", 0.0),
+        result.get("cumulative_score", 0.0),
+    )
 
 
 def _sanitise(bid: Any, budget: float) -> Dict[str, float]:

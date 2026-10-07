@@ -1,0 +1,117 @@
+{
+ "args": {
+  "runs": 3,
+  "rounds": 60,
+  "round_seconds": 2.0,
+  "outage_round": 15,
+  "outage_seconds": 30.0
+ },
+ "runs": {
+  "cloud": [
+   {
+    "mode": "cloud",
+    "seed": 101,
+    "uplink_bytes_per_round": 1140.462962962963,
+    "decision_bytes_per_round": 1118.0740740740741,
+    "latency_p50_ms": 208.0826759338379,
+    "latency_p95_ms": 516.7407989501953,
+    "outage_rounds": 15,
+    "outage_planner_share": 0.06666666666666667,
+    "outage_fallback_rounds": 10,
+    "score_in_outage": 3.834900000000001,
+    "score_after_outage": 9.9125,
+    "score_total": 18.2331,
+    "rounds_idle": 6,
+    "rounds_missed": 0,
+    "kappa": 0.0
+   },
+   {
+    "mode": "cloud",
+    "seed": 202,
+    "uplink_bytes_per_round": 1121.313725490196,
+    "decision_bytes_per_round": 1098.549019607843,
+    "latency_p50_ms": 245.4380989074707,
+    "latency_p95_ms": 495.50724029541016,
+    "outage_rounds": 15,
+    "outage_planner_share": 0.06666666666666667,
+    "outage_fallback_rounds": 9,
+    "score_in_outage": 4.1396,
+    "score_after_outage": 9.6782,
+    "score_total": 17.6327,
+    "rounds_idle": 9,
+    "rounds_missed": 0,
+    "kappa": 0.0
+   },
+   {
+    "mode": "cloud",
+    "seed": 303,
+    "uplink_bytes_per_round": 1125.4528301886792,
+    "decision_bytes_per_round": 1101.301886792453,
+    "latency_p50_ms": 233.88338088989258,
+    "latency_p95_ms": 568.3810710906982,
+    "outage_rounds": 15,
+    "outage_planner_share": 0.0,
+    "outage_fallback_rounds": 10,
+    "score_in_outage": 3.7684999999999995,
+    "score_after_outage": 9.491600000000002,
+    "score_total": 17.3834,
+    "rounds_idle": 7,
+    "rounds_missed": 0,
+    "kappa": 0.0
+   }
+  ],
+  "edge": [
+   {
+    "mode": "edge",
+    "seed": 101,
+    "uplink_bytes_per_round": 109.24561403508773,
+    "decision_bytes_per_round": 0.0,
+    "latency_p50_ms": 243.3929443359375,
+    "latency_p95_ms": 584.3594074249268,
+    "outage_rounds": 15,
+    "outage_planner_share": 1.0,
+    "outage_fallback_rounds": 0,
+    "score_in_outage": 4.8533,
+    "score_after_outage": 10.3462,
+    "score_total": 19.648,
+    "rounds_idle": 3,
+    "rounds_missed": 0,
+    "kappa": 0.0
+   },
+   {
+    "mode": "edge",
+    "seed": 202,
+    "uplink_bytes_per_round": 108.98245614035088,
+    "decision_bytes_per_round": 0.0,
+    "latency_p50_ms": 240.53573608398438,
+    "latency_p95_ms": 505.861759185791,
+    "outage_rounds": 15,
+    "outage_planner_share": 1.0,
+    "outage_fallback_rounds": 0,
+    "score_in_outage": 5.2273,
+    "score_after_outage": 9.216700000000001,
+    "score_total": 18.254,
+    "rounds_idle": 3,
+    "rounds_missed": 0,
+    "kappa": 0.0
+   },
+   {
+    "mode": "edge",
+    "seed": 303,
+    "uplink_bytes_per_round": 109.50847457627118,
+    "decision_bytes_per_round": 0.0,
+    "latency_p50_ms": 245.21946907043457,
+    "latency_p95_ms": 680.2911758422852,
+    "outage_rounds": 15,
+    "outage_planner_share": 1.0,
+    "outage_fallback_rounds": 0,
+    "score_in_outage": 4.9994000000000005,
+    "score_after_outage": 10.174499999999998,
+    "score_total": 19.2962,
+    "rounds_idle": 1,
+    "rounds_missed": 0,
+    "kappa": 0.0
+   }
+  ]
+ }
+}

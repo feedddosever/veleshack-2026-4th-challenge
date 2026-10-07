@@ -38,7 +38,7 @@ graded:  ## Restart the arena on the graded (hostile) scenario
 	@echo "  Graded scenario running: chaos on, 60 rounds, shorter windows."
 
 agent:  ## Build and run your agent (foreground, Ctrl-C to stop)
-	$(COMPOSE) --profile agent up --build agent
+	$(COMPOSE) --profile agent up --build --no-deps agent  # --no-deps: keep the arena `make up` / `make graded` started
 
 agent-logs:  ## Follow your agent's logs
 	$(COMPOSE) logs -f agent

@@ -1,3 +1,28 @@
+# Our submission: a battery-planning agent for the CoGNETs Swarm Arena
+
+> This section describes our work. The organisers' challenge description follows
+> unchanged below the line.
+
+## Technology
+
+| Required by the challenge | How we use it |
+|---|---|
+| Docker image | `agent-template/Dockerfile`, built with a plain `docker build agent-template` |
+| Python | Python 3.12, with `httpx` and `numpy` pinned in `agent-template/requirements.txt` |
+| REST/JSON with retries and backoff | The template client, with one measured change (see `agent-template/client.py`) |
+
+**No Eclipse technology is required by this challenge, so we added none.** The brief asks
+for Python, Docker, a REST client and JSON handling, and the organisers' repository uses
+no Eclipse project. The graders run our container against their own HTTP arena.
+
+* **Why not Zenoh or Mosquitto:** a pub/sub layer such as Eclipse Zenoh or Mosquitto would
+  earn no points and would add a failure mode to the graded run.
+* **Where it would fit:** in the full CoGNETs system, device discovery and swarm messaging
+  are the natural place for Zenoh (see `docs/cognets-mapping.md`). That is outside the scope
+  of this reduction.
+
+---
+
 # CoGNETs Swarm Arena
 
 The environment for the VelesHack 2026 challenge **“Dynamic Node Registration

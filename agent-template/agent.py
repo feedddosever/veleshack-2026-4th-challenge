@@ -7,6 +7,14 @@ faults the graded arena throws at it.
 
 You are not expected to change it. The challenge lives in strategy.py.
 
+Our changes (marked "ours" below):
+  * Results are fetched for the PREVIOUS round. The shipped loop only ever asked
+    for the round it had just bid in, which is never settled yet - the arena
+    opens the next round in the same instant it settles one - so every
+    /v1/result call returned 404 and `history` stayed empty for the whole run.
+  * The strategy is also told the round number and the arena's parameters
+    (total_rounds, battery_cutoff), through `profile["round"]` / `profile["arena"]`.
+
 Run it:
     ARENA_URL=http://localhost:8080 TEAM_NAME=team-kappa python agent.py
 
@@ -40,6 +48,10 @@ LOG = logging.getLogger("agent")
 
 ARENA_URL = os.environ.get("ARENA_URL", "http://localhost:8080")
 TEAM_NAME = os.environ.get("TEAM_NAME", "unnamed-team")
+# How long the bid may wait for last round's result (ours). The fetch runs on its
+# own thread, so a faulted fetch (the client backs off ~1 s on a 503) never holds
+# the bid back for longer than this.
+PREFETCH_WAIT_SECONDS = float(os.environ.get("PREFETCH_WAIT_SECONDS", "0.3"))
 
 _stop = threading.Event()
 
@@ -89,7 +101,7 @@ def run() -> int:
 
     history: List[Dict[str, Any]] = []
     last_bid_round = 0
-    last_result_round = 0
+    to_collect: List[int] = []  # ours: rounds we bid in whose result we have not read
     idle_polls = 0
 
     while not _stop.is_set():
@@ -127,7 +139,7 @@ def run() -> int:
                 round_index,
             )
             last_bid_round = 0
-            last_result_round = 0
+            to_collect.clear()
             history.clear()
 
         # ----------------------------------------------------- already done?
@@ -135,9 +147,7 @@ def run() -> int:
         # bookkeeping; missing the bidding window is a lost round. Never put
         # anything that can block in front of the bid.
         if round_index <= last_bid_round or rnd.get("settled"):
-            _collect_result(client, history, last_bid_round, last_result_round)
-            last_result_round = max(last_result_round,
-                                    _last_collected(history, last_result_round))
+            _collect_results(client, history, to_collect, round_index, rnd.get("settled"))
             _stop.wait(min(0.3, max(0.05, float(rnd.get("seconds_remaining", 0.3)))))
             continue
 
@@ -152,6 +162,12 @@ def run() -> int:
             _stop.wait(0.4)
             continue
 
+        # ----------------------------------------- last round's result (ours)
+        # It settled the moment this round opened. Reading it first gives the
+        # strategy an up-to-date history - if it arrives in time. If not, the
+        # strategy bids on the history it has and the result is read afterwards.
+        _prefetch_result(client, history, to_collect, round_index)
+
         # ------------------------------------------------------------- decide
         budget = float(rnd.get("budget", 0.0))
         try:
@@ -159,7 +175,8 @@ def run() -> int:
                 budget=budget,
                 prices=rnd.get("prices", {}),
                 capacities=rnd.get("capacities", {}),
-                profile=client.profile,
+                profile={**client.profile, "arena": client.arena_info,
+                         "round": round_index},  # ours
                 history=history,
             )
         except Exception:
@@ -177,6 +194,7 @@ def run() -> int:
         try:
             ack = client.post_bid(round_index, bid)
             last_bid_round = round_index
+            to_collect[:] = to_collect[-4:] + [round_index]  # ours
             if ack.get("warnings"):
                 LOG.warning("round %d accepted with warnings: %s",
                             round_index, ack["warnings"])
@@ -222,20 +240,52 @@ def run() -> int:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
-def _collect_result(client: ArenaClient, history: List[Dict[str, Any]],
-                    last_bid_round: int, last_result_round: int) -> None:
-    """Pull the last settled result into history. Best-effort, never blocking."""
-    if last_result_round >= last_bid_round or last_bid_round == 0:
+def _prefetch_result(client: ArenaClient, history: List[Dict[str, Any]],
+                     to_collect: List[int], open_round: int) -> None:
+    """Fetch the latest settled result, waiting at most PREFETCH_WAIT_SECONDS (ours)."""
+    settled = [r for r in to_collect if r < open_round]
+    if not settled:
         return
-    try:
-        result = client.get_result(last_bid_round)
-    except (NoRound, ArenaClientError):
-        return
-    if not result.get("participated"):
-        return
-    if history and history[-1].get("round") == result.get("round"):
+    box: List[Dict[str, Any]] = []
+
+    def fetch() -> None:
+        try:
+            box.append(client.get_result(settled[-1], attempts=1))
+        except ArenaClientError:
+            pass
+
+    worker = threading.Thread(target=fetch, daemon=True)
+    worker.start()
+    worker.join(PREFETCH_WAIT_SECONDS)
+    if box:  # read in time; otherwise _collect_results picks it up after the bid
+        _record(history, to_collect, box[0])
+
+
+def _collect_results(client: ArenaClient, history: List[Dict[str, Any]],
+                     to_collect: List[int], open_round: int, run_over: Any) -> None:
+    """Pull our settled results into `history` (ours). Best-effort, one attempt each.
+
+    A round is settled once a later round is open, or once the run is over.
+    """
+    for round_no in sorted(r for r in to_collect if r < open_round or (run_over and r <= open_round)):
+        try:
+            result = client.get_result(round_no, attempts=1)
+        except NoRound:
+            continue
+        except ArenaClientError:
+            return  # faulted; try again on the next poll
+        _record(history, to_collect, result)
+
+
+def _record(history: List[Dict[str, Any]], to_collect: List[int], result: Dict[str, Any]) -> None:
+    """Move one settled result from `to_collect` into `history` (ours)."""
+    round_no = int(result.get("round", 0))
+    if round_no in to_collect:
+        to_collect.remove(round_no)
+    if not result.get("participated") or any(int(h["round"]) == round_no for h in history):
         return
     history.append(result)
+    history.sort(key=lambda h: int(h.get("round", 0)))
     LOG.info(
         "round %d  spend=%.3f  alloc=%s  utility=%.4f%s  battery=%.2f  total=%.3f",
         result["round"],
@@ -246,10 +296,6 @@ def _collect_result(client: ArenaClient, history: List[Dict[str, Any]],
         result.get("battery", 0.0),
         result.get("cumulative_score", 0.0),
     )
-
-
-def _last_collected(history: List[Dict[str, Any]], fallback: int) -> int:
-    return int(history[-1]["round"]) if history else fallback
 
 
 def _sanitise(bid: Any, budget: float) -> Dict[str, float]:

@@ -17,6 +17,7 @@ SPDX-License-Identifier: Apache-2.0
 from __future__ import annotations
 
 import logging
+import os
 import random
 import time
 from typing import Any, Dict, Optional
@@ -34,6 +35,12 @@ LOG = logging.getLogger("agent.client")
 MAX_ATTEMPTS = 5
 BACKOFF_BASE = 0.25
 BACKOFF_CAP = 1.5
+# Ours: the arena answers every injected fault with Retry-After: 1. Sleeping the
+# full second three times in a row cost us a whole 3 s round in the conformance
+# run (round 7: 503, 429, 503 on GET /v1/round, then a 422 on the late bid). We
+# still back off - exponentially, with jitter - but never sleep longer than this
+# on a Retry-After.
+RETRY_AFTER_CAP = float(os.environ.get("RETRY_AFTER_CAP", "0.3"))
 
 
 class ArenaClientError(Exception):
@@ -107,15 +114,15 @@ class ArenaClient:
         """Exponential backoff with full jitter, capped below one round.
 
         We honour Retry-After but still clamp it: the arena suggests 1 second,
-        and blindly obeying a larger value would cost you the round.
+        and blindly obeying it would cost you the round (ours: clamped harder,
+        to RETRY_AFTER_CAP, and never above the exponential delay).
         """
+        delay = min(BACKOFF_BASE * (2 ** attempt), BACKOFF_CAP)
         if retry_after:
             try:
-                time.sleep(min(float(retry_after), BACKOFF_CAP))
-                return
+                delay = min(float(retry_after), RETRY_AFTER_CAP, delay)  # ours
             except (TypeError, ValueError):
                 pass
-        delay = min(BACKOFF_BASE * (2 ** attempt), BACKOFF_CAP)
         time.sleep(delay * (0.5 + self._rng.random()))  # full jitter
 
     def _request(

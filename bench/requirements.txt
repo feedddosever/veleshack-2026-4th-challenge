@@ -1,0 +1,2 @@
+# Benchmark only (the agent needs none of this). Also: pip install -e .  (the arena)
+matplotlib==3.10.7

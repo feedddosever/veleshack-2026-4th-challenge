@@ -1,6 +1,6 @@
 """Unit tests for strategy.py. Run from agent-template/:  python -m unittest discover tests
 
-Copyright 2026 The CoGNETs Consortium (template); tests by our team.
+Copyright 2026 The CoGNETs Consortium (template); tests by Ekaterina Fedoseeva.
 SPDX-License-Identifier: Apache-2.0
 """
 

@@ -9,7 +9,7 @@ both configurations bid identically and only the placement of the decision diffe
 
 `stop()` / `start()` simulate an outage: the port refuses connections while down.
 
-Copyright 2026 The CoGNETs Consortium (template); benchmark by our team.
+Copyright 2026 The CoGNETs Consortium (template); benchmark by Ekaterina Fedoseeva.
 SPDX-License-Identifier: Apache-2.0
 """
 

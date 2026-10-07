@@ -10,7 +10,7 @@ snapshot per settled round: every node's score, battery, rounds resting and floo
 penalties. The bots run on a copy of our device, so the lines compare strategies,
 not hardware. The team is $TEAM_NAME (as in .env).
 
-Copyright 2026 The CoGNETs Consortium (template); report by our team.
+Copyright 2026 The CoGNETs Consortium (template); report by Ekaterina Fedoseeva.
 SPDX-License-Identifier: Apache-2.0
 """
 

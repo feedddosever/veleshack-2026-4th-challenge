@@ -23,7 +23,7 @@ rest follows:
 Everything is recomputed from the arguments each round; the module keeps no state
 between calls, so a restarted agent or a new run needs no special handling.
 
-Copyright 2026 The CoGNETs Consortium (template); strategy by our team.
+Copyright 2026 The CoGNETs Consortium (template); strategy by Ekaterina Fedoseeva.
 SPDX-License-Identifier: Apache-2.0
 """
 

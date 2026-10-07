@@ -7,8 +7,8 @@ submitted on taikai and is not kept in this repository.
 
 ## Title: Second Wind
 
-- **Subtitle:** An edge agent that knows when to rest. VelesHack 2026, Challenge 4 (CoGNETs), team
-  `feed_ddos_ever`.
+- **Subtitle:** An edge agent that knows when to rest. Ekaterina Fedoseeva, team `feed_ddos_ever`;
+  VelesHack 2026, Challenge 4 (CoGNETs).
 - **Speaker note:** "We built the node that wins by knowing when to sleep."
 
 ## 1. GitHub repo
@@ -17,7 +17,7 @@ submitted on taikai and is not kept in this repository.
 - **Run it:** `cp .env.example .env` (set `TEAM_NAME`), then `make up`, then `make agent`
 - **Submission:** `agent-template/Dockerfile`. Strategy in `strategy.py`; simulator in `tools/`;
   edge-vs-cloud benchmark in `bench/`
-- **Team / `TEAM_NAME`:** `feed_ddos_ever`
+- **Team:** Ekaterina Fedoseeva (solo); `TEAM_NAME` `feed_ddos_ever`
 - **Speaker note:** "Everything we show is in this repo and runs with three commands."
 
 ## 2. Summary: problem, user, solution

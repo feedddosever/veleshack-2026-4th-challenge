@@ -5,7 +5,7 @@ Allocation in an Edge Computing Environment.
 
 | | |
 |---|---|
-| Team | `feed_ddos_ever` (members: _add names here_) |
+| Team | **Ekaterina Fedoseeva** (solo), team `feed_ddos_ever` |
 | `TEAM_NAME` | `feed_ddos_ever`. It fixes the device profile in the graded run; use it everywhere |
 | Dockerfile | `agent-template/Dockerfile`, built with `docker build agent-template` |
 | Licence | Apache-2.0, see [LICENSE](LICENSE) |

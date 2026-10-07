@@ -8,11 +8,14 @@ Scoring mirrors the grading harness: for every seed we play the strategy (S), th
 replay the same seed, bots and device with the template strategy in its place (T).
 
     python tools/sim.py                          # our strategy vs template, 200 seeds
-    python tools/sim.py --strategy even_split    # any baseline as the strategy under test
+    python tools/sim.py --strategy even-split    # any baseline as the strategy under test
     python tools/sim.py --ablation               # contribution of each part of our strategy
 
 What it does not model: network faults, latency and missed rounds. Those cost
 resilience points, not strategy points, and `make check` covers them.
+
+Copyright 2026 The CoGNETs Consortium (arena); simulator by Ekaterina Fedoseeva.
+SPDX-License-Identifier: Apache-2.0
 """
 
 from __future__ import annotations

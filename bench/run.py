@@ -15,7 +15,7 @@ different seeds.
 
 Writes bench/results/results.md, chart.png and raw.json.
 
-Copyright 2026 The CoGNETs Consortium (template); benchmark by our team.
+Copyright 2026 The CoGNETs Consortium (template); benchmark by Ekaterina Fedoseeva.
 SPDX-License-Identifier: Apache-2.0
 """
 

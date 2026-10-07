@@ -9,7 +9,7 @@ Measured, written to $BENCH_OUT as JSON when the run ends:
   * payload bytes to/from the arena and to/from the cloud (JSON bodies; HTTP headers excluded)
   * per round: decision source, and latency from first seeing the round to the bid accepted
 
-Copyright 2026 The CoGNETs Consortium (template); benchmark by our team.
+Copyright 2026 The CoGNETs Consortium (template); benchmark by Ekaterina Fedoseeva.
 SPDX-License-Identifier: Apache-2.0
 """
 

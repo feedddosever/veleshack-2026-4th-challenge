@@ -29,22 +29,18 @@ fixed budget without the node going dark, and without depending on a cloud being
 ## How it works
 
 ```mermaid
-flowchart LR
-  subgraph EDGE["Edge node: our agent, one Docker container"]
-    direction TB
-    C["client.py<br/>REST, retries with backoff"] --> F["1. Field estimate<br/>exact, from last round's price"]
-    F --> U["2. This round's utility U(x)<br/>floors first, Kelly split"]
-    U --> D["3. Battery plan (stochastic DP)<br/>spend energy now, or rest later?"]
-    D --> B["bid: compute, energy, security"]
-  end
+flowchart TB
   subgraph ARENA["Arena (organisers): registry, auctioneer, scorer"]
-    K["Kelly allocation<br/>CES utility, service floors"]
-    BOTS["3 baseline bots"]
+    BOTS["3 baseline bots"] --- K["Kelly allocation<br/>CES utility, service floors"]
   end
-  K -- "round: capacities, prices, budget, battery" --> C
-  K -- "last round's result" --> C
+  subgraph EDGE["Edge node: our agent, one Docker container"]
+    C["client.py<br/>REST, retries"] --> F["1. Field estimate<br/>exact, from last price"]
+    F --> U["2. Round utility U(x)<br/>floors first, Kelly split"]
+    U --> D["3. Battery plan<br/>stochastic DP: spend or rest?"]
+    D --> B["bid: compute,<br/>energy, security"]
+  end
+  K -- "round data and last round's result" --> C
   B -- "3 numbers per round" --> K
-  BOTS --- K
 ```
 
 Every decision is made on the node. The arena receives only a 3-number bid per round, plus

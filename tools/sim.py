@@ -38,8 +38,12 @@ Strategy = Callable[..., Dict[str, float]]
 TEMPLATE: Strategy = bot.naive_max  # what agent-template/strategy.py ships with
 
 
-def play(fn: Strategy, seed: int, team: str, scenario: str = "graded") -> Dict[str, Any]:
-    """One full run: the three bots plus `fn` registered as `team`."""
+def play(fn: Strategy, seed: int, team: str, scenario: str = "graded",
+         on_round: Callable[[Arena], None] = None) -> Dict[str, Any]:
+    """One full run: the three bots plus `fn` registered as `team`.
+
+    `on_round(arena)` is called after every settled round (tools/report.py records with it).
+    """
     cfg = ScenarioConfig.load(scenario)
     cfg.seed = seed
     arena = Arena(cfg)
@@ -68,6 +72,8 @@ def play(fn: Strategy, seed: int, team: str, scenario: str = "graded") -> Dict[s
         # yet, so in a live arena their history stays empty. Simulate that faithfully.
         if me.node_id in state.results:
             histories[me.node_id].append({**state.results[me.node_id], "participated": True})
+        if on_round:
+            on_round(arena)
 
     bots = {n.team: round(n.score, 4) for n in arena.nodes.values() if n.is_baseline}
     return {

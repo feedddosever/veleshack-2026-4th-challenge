@@ -1,0 +1,1989 @@
+{
+ "source": "Live graded run in Docker (fault injection on)",
+ "team": "feed_ddos_ever",
+ "seed": 20261006,
+ "recorded": "2026-10-07",
+ "rounds": [
+  {
+   "round": 1,
+   "nodes": {
+    "bot-naive-max": {
+     "score": 0.2243,
+     "battery": 0.664,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 0.2177,
+     "battery": 0.603,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 0.2163,
+     "battery": 0.714,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "feed_ddos_ever": {
+     "score": 0.2065,
+     "battery": 0.737,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 2,
+   "nodes": {
+    "bot-naive-max": {
+     "score": 0.486,
+     "battery": 0.563,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 0.4791,
+     "battery": 0.625,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 0.4681,
+     "battery": 0.434,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "feed_ddos_ever": {
+     "score": 0.4472,
+     "battery": 0.72,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 3,
+   "nodes": {
+    "bot-naive-max": {
+     "score": 0.7663,
+     "battery": 0.45,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 0.7578,
+     "battery": 0.514,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 0.7414,
+     "battery": 0.245,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "feed_ddos_ever": {
+     "score": 0.7027,
+     "battery": 0.701,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 4,
+   "nodes": {
+    "bot-naive-max": {
+     "score": 1.0149,
+     "battery": 0.341,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 1.0055,
+     "battery": 0.39,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "feed_ddos_ever": {
+     "score": 0.9247,
+     "battery": 0.684,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 0.8639,
+     "battery": 0.063,
+     "idle": 0,
+     "floors": 1,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 5,
+   "nodes": {
+    "bot-naive-max": {
+     "score": 1.2377,
+     "battery": 0.256,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 1.2276,
+     "battery": 0.299,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "feed_ddos_ever": {
+     "score": 1.1306,
+     "battery": 0.668,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 1.0783,
+     "battery": 0.0,
+     "idle": 0,
+     "floors": 1,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 6,
+   "nodes": {
+    "bot-naive-max": {
+     "score": 1.5436,
+     "battery": 0.094,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 1.5326,
+     "battery": 0.143,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "feed_ddos_ever": {
+     "score": 1.397,
+     "battery": 0.641,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 1.0783,
+     "battery": 0.22,
+     "idle": 1,
+     "floors": 1,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 7,
+   "nodes": {
+    "bot-naive-max": {
+     "score": 1.7764,
+     "battery": 0.0,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 1.7649,
+     "battery": 0.02,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "feed_ddos_ever": {
+     "score": 1.6062,
+     "battery": 0.628,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 1.1924,
+     "battery": 0.064,
+     "idle": 1,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 8,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 2.1479,
+     "battery": 0.591,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 1.7764,
+     "battery": 0.22,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 1.7649,
+     "battery": 0.24,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 1.7614,
+     "battery": 0.0,
+     "idle": 1,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 9,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 2.4013,
+     "battery": 0.564,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 2.0621,
+     "battery": 0.077,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 2.05,
+     "battery": 0.108,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 1.7614,
+     "battery": 0.22,
+     "idle": 2,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 10,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 2.6375,
+     "battery": 0.55,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 2.3265,
+     "battery": 0.0,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 2.3122,
+     "battery": 0.0,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 2.0172,
+     "battery": 0.041,
+     "idle": 2,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 11,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 3.5892,
+     "battery": 0.266,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 2.3265,
+     "battery": 0.22,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 2.3122,
+     "battery": 0.22,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 2.0172,
+     "battery": 0.261,
+     "idle": 3,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 12,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 3.8116,
+     "battery": 0.262,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 2.5725,
+     "battery": 0.165,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 2.5153,
+     "battery": 0.087,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 2.2455,
+     "battery": 0.17,
+     "idle": 3,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 13,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 4.0309,
+     "battery": 0.239,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 2.8253,
+     "battery": 0.027,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 2.7631,
+     "battery": 0.0,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 2.4983,
+     "battery": 0.0,
+     "idle": 3,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 14,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 5.1083,
+     "battery": 0.0,
+     "idle": 0,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 2.8253,
+     "battery": 0.247,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 2.7631,
+     "battery": 0.22,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 2.4983,
+     "battery": 0.22,
+     "idle": 4,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 15,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 5.1083,
+     "battery": 0.22,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 3.1838,
+     "battery": 0.16,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 3.0699,
+     "battery": 0.015,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 2.8345,
+     "battery": 0.074,
+     "idle": 4,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 16,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 5.4711,
+     "battery": 0.194,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 3.566,
+     "battery": 0.035,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 3.1979,
+     "battery": 0.0,
+     "idle": 4,
+     "floors": 2,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 3.0699,
+     "battery": 0.235,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 17,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 5.8777,
+     "battery": 0.145,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 3.5777,
+     "battery": 0.0,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 3.566,
+     "battery": 0.255,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 3.1979,
+     "battery": 0.22,
+     "idle": 5,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 18,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 6.2223,
+     "battery": 0.132,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 3.9419,
+     "battery": 0.132,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 3.5777,
+     "battery": 0.22,
+     "idle": 5,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 3.5578,
+     "battery": 0.014,
+     "idle": 5,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 19,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 6.5326,
+     "battery": 0.106,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 4.3011,
+     "battery": 0.0,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 3.9305,
+     "battery": 0.086,
+     "idle": 5,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 3.5578,
+     "battery": 0.234,
+     "idle": 6,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 20,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 6.808,
+     "battery": 0.097,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 4.3011,
+     "battery": 0.22,
+     "idle": 5,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 4.247,
+     "battery": 0.0,
+     "idle": 5,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 3.8694,
+     "battery": 0.0,
+     "idle": 6,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 21,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 7.2664,
+     "battery": 0.068,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 4.8444,
+     "battery": 0.0,
+     "idle": 5,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 4.247,
+     "battery": 0.22,
+     "idle": 6,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 3.8694,
+     "battery": 0.22,
+     "idle": 7,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 22,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 7.56,
+     "battery": 0.062,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 4.8444,
+     "battery": 0.22,
+     "idle": 6,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 4.5922,
+     "battery": 0.047,
+     "idle": 6,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 4.202,
+     "battery": 0.0,
+     "idle": 7,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 23,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 7.949,
+     "battery": 0.054,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 5.3586,
+     "battery": 0.0,
+     "idle": 6,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 4.5922,
+     "battery": 0.267,
+     "idle": 7,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 4.202,
+     "battery": 0.22,
+     "idle": 8,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 24,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 8.2831,
+     "battery": 0.0,
+     "idle": 1,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 5.3586,
+     "battery": 0.22,
+     "idle": 7,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 4.9259,
+     "battery": 0.191,
+     "idle": 7,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 4.5085,
+     "battery": 0.077,
+     "idle": 8,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 25,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 8.2831,
+     "battery": 0.22,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 5.6477,
+     "battery": 0.113,
+     "idle": 7,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 5.2104,
+     "battery": 0.133,
+     "idle": 7,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 4.7841,
+     "battery": 0.0,
+     "idle": 8,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 26,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 8.556,
+     "battery": 0.201,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 5.9615,
+     "battery": 0.0,
+     "idle": 7,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 5.518,
+     "battery": 0.021,
+     "idle": 7,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 4.7841,
+     "battery": 0.22,
+     "idle": 9,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 27,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 9.0527,
+     "battery": 0.183,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 5.9615,
+     "battery": 0.22,
+     "idle": 8,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 5.518,
+     "battery": 0.241,
+     "idle": 8,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 5.3137,
+     "battery": 0.0,
+     "idle": 9,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 28,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 9.3539,
+     "battery": 0.167,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 6.3338,
+     "battery": 0.005,
+     "idle": 8,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 5.8886,
+     "battery": 0.038,
+     "idle": 8,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 5.3137,
+     "battery": 0.22,
+     "idle": 10,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 29,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 9.8379,
+     "battery": 0.15,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 6.3338,
+     "battery": 0.225,
+     "idle": 9,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 5.8886,
+     "battery": 0.258,
+     "idle": 9,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 5.8387,
+     "battery": 0.0,
+     "idle": 10,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 30,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 10.1373,
+     "battery": 0.128,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 6.6971,
+     "battery": 0.011,
+     "idle": 9,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 6.255,
+     "battery": 0.006,
+     "idle": 9,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 5.8387,
+     "battery": 0.22,
+     "idle": 11,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 31,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 10.6414,
+     "battery": 0.107,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 6.6971,
+     "battery": 0.231,
+     "idle": 10,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 6.3517,
+     "battery": 0.0,
+     "idle": 11,
+     "floors": 2,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 6.255,
+     "battery": 0.226,
+     "idle": 10,
+     "floors": 0,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 32,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 10.948,
+     "battery": 0.083,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 7.0605,
+     "battery": 0.03,
+     "idle": 10,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 6.6107,
+     "battery": 0.083,
+     "idle": 10,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 6.3517,
+     "battery": 0.22,
+     "idle": 12,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 33,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 11.2944,
+     "battery": 0.071,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 7.0605,
+     "battery": 0.25,
+     "idle": 11,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 6.9831,
+     "battery": 0.0,
+     "idle": 10,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 6.7065,
+     "battery": 0.034,
+     "idle": 12,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 34,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 11.7953,
+     "battery": 0.033,
+     "idle": 2,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 7.6594,
+     "battery": 0.0,
+     "idle": 11,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 6.9831,
+     "battery": 0.22,
+     "idle": 11,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 6.7065,
+     "battery": 0.254,
+     "idle": 13,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 35,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 11.7953,
+     "battery": 0.253,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 7.6594,
+     "battery": 0.22,
+     "idle": 12,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 7.4567,
+     "battery": 0.082,
+     "idle": 11,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 7.1566,
+     "battery": 0.079,
+     "idle": 13,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 36,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 12.0102,
+     "battery": 0.236,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 7.9144,
+     "battery": 0.081,
+     "idle": 12,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 7.7061,
+     "battery": 0.0,
+     "idle": 11,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 7.411,
+     "battery": 0.0,
+     "idle": 13,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 37,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 12.3688,
+     "battery": 0.21,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 8.3612,
+     "battery": 0.0,
+     "idle": 12,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 7.7061,
+     "battery": 0.22,
+     "idle": 12,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 7.411,
+     "battery": 0.22,
+     "idle": 14,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 38,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 12.6884,
+     "battery": 0.2,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 8.3612,
+     "battery": 0.22,
+     "idle": 13,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 8.0406,
+     "battery": 0.074,
+     "idle": 12,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 7.7408,
+     "battery": 0.043,
+     "idle": 14,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 39,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 12.907,
+     "battery": 0.182,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 8.6405,
+     "battery": 0.026,
+     "idle": 13,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 8.3212,
+     "battery": 0.0,
+     "idle": 12,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 7.7408,
+     "battery": 0.263,
+     "idle": 15,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 40,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 13.426,
+     "battery": 0.16,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 8.6405,
+     "battery": 0.246,
+     "idle": 14,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 8.3237,
+     "battery": 0.0,
+     "idle": 15,
+     "floors": 2,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 8.3212,
+     "battery": 0.22,
+     "idle": 13,
+     "floors": 0,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 41,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 13.7245,
+     "battery": 0.139,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 8.9848,
+     "battery": 0.079,
+     "idle": 14,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 8.6649,
+     "battery": 0.042,
+     "idle": 13,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 8.3237,
+     "battery": 0.22,
+     "idle": 16,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 42,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 14.0503,
+     "battery": 0.125,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 9.3581,
+     "battery": 0.0,
+     "idle": 14,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 8.6881,
+     "battery": 0.0,
+     "idle": 16,
+     "floors": 2,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 8.6649,
+     "battery": 0.262,
+     "idle": 14,
+     "floors": 0,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 43,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 14.4718,
+     "battery": 0.086,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 9.3581,
+     "battery": 0.22,
+     "idle": 15,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 9.1608,
+     "battery": 0.007,
+     "idle": 14,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 8.6881,
+     "battery": 0.22,
+     "idle": 17,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 44,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 14.8415,
+     "battery": 0.0,
+     "idle": 3,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 9.7266,
+     "battery": 0.1,
+     "idle": 15,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 9.1608,
+     "battery": 0.227,
+     "idle": 15,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 9.0365,
+     "battery": 0.018,
+     "idle": 17,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 45,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 14.8415,
+     "battery": 0.22,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 10.2547,
+     "battery": 0.0,
+     "idle": 15,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 9.6807,
+     "battery": 0.084,
+     "idle": 15,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 9.0365,
+     "battery": 0.238,
+     "idle": 18,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 46,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 15.0963,
+     "battery": 0.21,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 10.2547,
+     "battery": 0.22,
+     "idle": 16,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 9.9877,
+     "battery": 0.0,
+     "idle": 15,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 9.3412,
+     "battery": 0.0,
+     "idle": 18,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 47,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 15.4893,
+     "battery": 0.187,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 10.767,
+     "battery": 0.0,
+     "idle": 16,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 9.9877,
+     "battery": 0.22,
+     "idle": 16,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 9.3412,
+     "battery": 0.22,
+     "idle": 19,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 48,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 15.7417,
+     "battery": 0.18,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 10.767,
+     "battery": 0.22,
+     "idle": 17,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 10.2582,
+     "battery": 0.079,
+     "idle": 16,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 9.6108,
+     "battery": 0.074,
+     "idle": 19,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 49,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 15.9614,
+     "battery": 0.17,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 11.0118,
+     "battery": 0.129,
+     "idle": 17,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 10.497,
+     "battery": 0.022,
+     "idle": 16,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 9.8478,
+     "battery": 0.0,
+     "idle": 19,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 50,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 16.3599,
+     "battery": 0.146,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 11.5178,
+     "battery": 0.0,
+     "idle": 17,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 10.497,
+     "battery": 0.242,
+     "idle": 17,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 9.8478,
+     "battery": 0.22,
+     "idle": 20,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 51,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 16.6762,
+     "battery": 0.14,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 11.5178,
+     "battery": 0.22,
+     "idle": 18,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 10.8427,
+     "battery": 0.082,
+     "idle": 17,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 10.187,
+     "battery": 0.037,
+     "idle": 20,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 52,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 16.9036,
+     "battery": 0.125,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 11.8091,
+     "battery": 0.027,
+     "idle": 18,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 11.1329,
+     "battery": 0.0,
+     "idle": 17,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 10.187,
+     "battery": 0.257,
+     "idle": 21,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 53,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 17.3097,
+     "battery": 0.112,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 11.8091,
+     "battery": 0.247,
+     "idle": 19,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 11.1329,
+     "battery": 0.22,
+     "idle": 18,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 10.6602,
+     "battery": 0.0,
+     "idle": 21,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 54,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 17.5452,
+     "battery": 0.101,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 12.0947,
+     "battery": 0.1,
+     "idle": 19,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 11.4194,
+     "battery": 0.053,
+     "idle": 18,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 10.6602,
+     "battery": 0.22,
+     "idle": 22,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 55,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 17.8037,
+     "battery": 0.093,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 12.3887,
+     "battery": 0.0,
+     "idle": 19,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 11.7108,
+     "battery": 0.0,
+     "idle": 18,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 10.9435,
+     "battery": 0.039,
+     "idle": 22,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 56,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 18.9055,
+     "battery": 0.0,
+     "idle": 4,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 12.3887,
+     "battery": 0.22,
+     "idle": 20,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 11.7108,
+     "battery": 0.22,
+     "idle": 19,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 10.9435,
+     "battery": 0.259,
+     "idle": 23,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 57,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 18.9055,
+     "battery": 0.22,
+     "idle": 5,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 12.7534,
+     "battery": 0.142,
+     "idle": 20,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 12.0298,
+     "battery": 0.059,
+     "idle": 19,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 11.2804,
+     "battery": 0.13,
+     "idle": 23,
+     "floors": 2,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 58,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 19.1443,
+     "battery": 0.152,
+     "idle": 5,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 12.9992,
+     "battery": 0.024,
+     "idle": 20,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 12.2714,
+     "battery": 0.0,
+     "idle": 19,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 11.4024,
+     "battery": 0.0,
+     "idle": 23,
+     "floors": 3,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 59,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 20.0473,
+     "battery": 0.0,
+     "idle": 5,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 12.9992,
+     "battery": 0.244,
+     "idle": 21,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 12.2714,
+     "battery": 0.22,
+     "idle": 20,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 11.4024,
+     "battery": 0.22,
+     "idle": 24,
+     "floors": 3,
+     "missed": 0
+    }
+   }
+  },
+  {
+   "round": 60,
+   "nodes": {
+    "feed_ddos_ever": {
+     "score": 20.0473,
+     "battery": 0.22,
+     "idle": 6,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-naive-max": {
+     "score": 13.3281,
+     "battery": 0.185,
+     "idle": 21,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-proportional": {
+     "score": 12.5512,
+     "battery": 0.095,
+     "idle": 20,
+     "floors": 0,
+     "missed": 0
+    },
+    "bot-even-split": {
+     "score": 11.7061,
+     "battery": 0.124,
+     "idle": 24,
+     "floors": 3,
+     "missed": 0
+    }
+   }
+  }
+ ],
+ "template_score": 13.42595362105132
+}
